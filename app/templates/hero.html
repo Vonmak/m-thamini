@@ -1,11 +1,25 @@
 <section class="hero my-5">
   <div class="container">
-    <div class="hero-wrapper">
+    <div class="row row-cols-lg-2 row-cols-md-2 row-cols-sm-1 hero-wrapper">
       <div class="hero-content col-md-5 p-5">
-        <h1>Manage Your</h1>
-        <span class="color">Assets</span>
+        <h1>
+          Manage Your <span class="color">Assets</span><br />
+          more effciently
+        </h1>
+        <p class="lead mt-3 lh-3">
+          Wouldn't be nice to live knowing that someone is keeping track of your
+          investments and giving you the necessary reports whenever you need
+          them? Well, M-Thamini is here to help you do just that, with a single
+          click of a button you get to know how much you are worth.
+        </p>
+        <button class="btn btn-lg hero-btn">Get Started</button>
       </div>
-      <div class="hero-image col-md-5p-5"></div>
+      <div class="hero-image col-md-5p-5">
+        <img
+          src="{{url_for('static', filename='images/hero.png')}}"
+          alt="Hero Image"
+        />
+      </div>
     </div>
   </div>
 </section>

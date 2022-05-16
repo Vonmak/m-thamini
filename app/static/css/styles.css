@@ -7,24 +7,60 @@
       --heroColor: #070437;
       --secondaryColor: #fdd853;
 
+      /* Font Family */
+      --primaryFont: font-family: 'Poppins', sans-serif;
+
 
 }
 
 body {
       background-image: linear-gradient(to right, #b7b2f7, #766ded);
+      font-family: 'Poppins', sans-serif;
+}
+
+.nav-btn {
+      background-color: var(--heroColor);
+      color: #fff;
+      border: none;
+      border-radius: 20px;
+      padding: 10px 30px;
+}
+
+.nav-btn:hover {
+      background-color: #333;
+      color: #fff;
+}
+
+.nav-item a{
+      color: var(--heroColor);
+      font-size: 20px;
 }
 
 
 /* Hero Section Styles */
 .hero-wrapper {
       background-color: var(--heroColor);
+      max-height: 100%;
       height: 70vh;
       border-radius: 30px;
       border-bottom: 8px solid var(--secondaryColor);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
 }
 
 .hero-content {
       color: #fff;
+}
+
+.hero-content h1 {
+      font-size: 50px;
+}
+
+.hero-btn {
+      background-color: var(--secondaryColor);
+      border-radius: 20px;
+      margin-top: 30px;
 }
 
 .color {
