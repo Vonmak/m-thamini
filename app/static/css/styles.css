@@ -1,0 +1,32 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+      --primaryColor: #b7b2f7;
+      --primaryColor2: #c6c3ef;
+      --heroColor: #070437;
+      --secondaryColor: #fdd853;
+
+
+}
+
+body {
+      background-image: linear-gradient(to right, #b7b2f7, #766ded);
+}
+
+
+/* Hero Section Styles */
+.hero-wrapper {
+      background-color: var(--heroColor);
+      height: 70vh;
+      border-radius: 30px;
+      border-bottom: 8px solid var(--secondaryColor);
+}
+
+.hero-content {
+      color: #fff;
+}
+
+.color {
+      color: var(--secondaryColor);
+}
