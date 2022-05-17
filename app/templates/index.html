@@ -1,3 +1,16 @@
 {% extends "base.html" %} {% block content %}
-<div class="my-5">{% include "features.html" %}</div>
+<div class="into-message text-center my-5">
+  <h2>About Our Product</h2>
+  <p class="lead mx-auto fs-4 mt-3" style="max-width: 800px">
+    M-Thamana is a web application that enables users to keep track of their
+    assets in terms of land, houses, cars or shares and it generates for you a
+    valuation report based on Pre-determined current market costs and analysis.
+    In other words, <strong>don't guess your net worth, be sure of it</strong>
+  </p>
+</div>
+<div>{% include "features.html" %}</div>
+<section class="action p-4 text-center">
+  <h2 class="fs-1">Ready To Start Managing Your Assets?</h2>
+  <button class="btn btn-lg cta-btn mt-3" type="button">GET STARTED</button>
+</section>
 {% endblock %}
