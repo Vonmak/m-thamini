@@ -7,8 +7,8 @@ instance/*
 !instance/.gitignore
 .webassets-cache
 .env
-start.sh
 virtual/
+start.sh
 
 ### Flask.Python Stack ###
 # Byte-compiled / optimized / DLL files
