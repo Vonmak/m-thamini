@@ -1,0 +1,124 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+      --primaryColor: #b7b2f7;
+      --primaryColor2: #c6c3ef;
+      --heroColor: #070437;
+      --secondaryColor: #fdd853;
+
+      /* Font Family */
+      --primaryFont: font-family: 'Poppins', sans-serif;
+
+
+}
+
+/* #d7d5ff, #908bd4, */
+
+body {
+      background-image: linear-gradient(to right, #d7d5ff, #b1aed7 );
+      font-family: 'Poppins', sans-serif;
+}
+
+.nav-btn {
+      background-color: var(--heroColor);
+      color: #fff;
+      border: none;
+      border-radius: 20px;
+      padding: 10px 30px;
+}
+
+.nav-btn:hover {
+      background-color: #004aad;
+      color: #fff;
+}
+
+.nav-item a{
+      color: var(--heroColor);
+      font-size: 20px;
+}
+
+
+/* Hero Section Styles */
+.hero-wrapper {
+      background-color: var(--heroColor);
+      max-height: 100%;
+      /* height: 70vh; */
+      /* border-radius: 30px; */
+      border-bottom: 8px solid var(--secondaryColor);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 50px 0px;
+}
+
+.hero-content {
+      color: #fff;
+}
+
+.hero-content h1 {
+      font-size: 50px;
+}
+
+.hero-btn {
+      background-color: var(--secondaryColor);
+      border-radius: 20px;
+      margin-top: 30px;
+}
+
+.color {
+      color: var(--secondaryColor);
+}
+
+/* FEATURES */
+.feature-heading {
+      padding-bottom: 15px;
+      border-bottom: 2px solid var(--heroColor);
+}
+
+.feature-card {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      align-items: center;
+      margin-top: 20px;
+      margin-bottom: 20px;
+}
+
+.feature-card img {
+      width: 70px;
+      height: 70px;
+}
+
+.feature-app {
+      max-width: 300px;
+}
+
+/* CALL TO ACTION */
+.action {
+      height: 200px;
+      display: block;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      background-color: #004aad;
+}
+
+.cta-btn {
+      background-color: #fdd853;
+      color: #070437;
+}
+
+/* FOOTER SECTION */
+.footer {
+      background-color: var(--heroColor);
+      color: #fff;
+}
+
+.footer-wrapper .nav-link{
+      color: #fff;
+}
+
+.copyright {
+      color: #fff;
+}

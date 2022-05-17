@@ -1,9 +1,16 @@
 from flask import render_template, redirect, url_for
 from . import main
-from ..models import User,Asset,Subscriber
+from ..models import,Asset
 from .forms import AssetForm
 from flask_login import login_required, current_user
 
+
+
+@main.route('/')
+@main.route('/home')
+def index():
+      
+    return render_template('index.html')
 
 @main.route('/assets/')
 def assets():
