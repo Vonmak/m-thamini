@@ -45,12 +45,14 @@ class Asset(db.Model):
     assetname = db.Column(db.String(255))
     category_id = db.Column(db.String(255), nullable=False)
     description = db.Column(db.String(), index = True)
-    user_id = db.Column(db.Integer, db.Foreignkey('user_id'),nullable=False)
+    worth= db.Column(db.String(255))
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'),nullable=False)
     date_posted = db.Column(db.DateTime(250), default=datetime.utcnow)
     
     
     
-    def save_blogs(self):
+    
+    def save_assets(self):
         db.session.add(self)
         db.session.commit()
         
@@ -65,6 +67,10 @@ class Asset(db.Model):
 
     def __repr__(self):
         return f"Asset {self.assetname}"
+    
+    
+    
+    
     
 class Subscriber(db.Model):
     __tablename__='subscribers'
