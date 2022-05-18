@@ -10,6 +10,15 @@ from flask_login import login_required, current_user
 @main.route('/home')
 def index():
       
+
+      return render_template('index.html')
+      
+
+@main.route('/dashboard/index')
+def user_dash():
+      
+      return render_template('dashboard/index.html')
+
     return render_template('index.html')
 
 @main.route('/assets/')
@@ -32,6 +41,7 @@ def assets_new():
         new_asset.save_asset()
         return redirect(url_for('main.assets'))
     return render_template('new_asset.html',form=form)
+
 
 
 
