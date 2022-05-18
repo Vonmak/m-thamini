@@ -10,7 +10,7 @@ class AssetForm(FlaskForm):
 
     description = TextAreaField(
         'How best would you describe your Asset?', validators=[Required()])
-    # location = StringField('Asset Location', validators=[Required()])
+    location = StringField('Asset Location', validators=[Required()])
     worth = IntegerField('Asset Value', validators=[Required()])
 
     submit = SubmitField('Submit')
