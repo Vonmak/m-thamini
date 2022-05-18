@@ -56,7 +56,7 @@ class Asset(db.Model):
         db.session.add(self)
         db.session.commit()
         
-    def delete(self):
+    def delete_asset(self):
         db.session.delete(self)
         db.session.commit()
     
