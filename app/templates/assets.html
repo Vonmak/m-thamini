@@ -1,3 +1,23 @@
-{% import 'macros.html' as macro%} {% block content %}
-<div>{{macro.displayAssets(assets)}}</div>
-{% endblock %}
+{% import 'macros.html' as macro%}<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <meta charset="utf-8" />
+  </head>
+  <link
+    rel="stylesheet"
+    href="{{url_for('static',filename='css/styles.css')}}"
+  />
+  <body>
+    {% block content %}
+
+    <div class="container action">
+      {{macro.displayAssets(financialAssets)}}
+      <hr />
+      {{macro.displayAssets(currentAssets)}}
+      <hr />
+      {{macro.displayAssets(fixedAssets)}}
+    </div>
+    {% endblock %}
+  </body>
+</html>
