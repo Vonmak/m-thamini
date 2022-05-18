@@ -5,20 +5,23 @@ from .forms import AssetForm
 from flask_login import login_required, current_user
 
 
-
 @main.route('/')
 @main.route('/home')
 def index():
-      
+
     return render_template('index.html')
+
 
 @main.route('/assets/')
 def assets():
+    title = 'assets'
+    assets = Asset.query.filter_by().first()
     currentAssets = Asset.query.filter_by(category_id='Current Asset')
     financialAssets = Asset.query.filter_by(category_id='Financial Asset')
     fixedAssets = Asset.query.filter_by(category_id='Fixed Asset')
-    
-    return render_template('assets.html', currentAssets=currentAssets, financialAssets=financialAssets, fixedAssets=fixedAssets)
+
+    return render_template('assets.html', assets=assets, title=title, currentAssets=currentAssets, financialAssets=financialAssets, fixedAssets=fixedAssets)
+
 
 @main.route('/assets/new')
 def assets_new():
@@ -28,7 +31,9 @@ def assets_new():
         title = form.title.data
         category_id = form.category_id.data
         worth = form.worth.data
-        new_asset = Asset(user_id=current_user.id, title = title,description=description,category_id=category_id, worth=worth)
+        location = form.location.data
+        new_asset = Asset(user_id=current_user.id, title=title,
+                          description=description, category_id=category_id, worth=worth, location=location)
         new_asset.save_asset()
         return redirect(url_for('main.assets'))
-    return render_template('new_asset.html',form=form)
+    return render_template('new_asset.html', form=form)
