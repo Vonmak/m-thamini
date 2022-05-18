@@ -32,3 +32,7 @@ def assets_new():
         new_asset.save_asset()
         return redirect(url_for('main.assets'))
     return render_template('new_asset.html',form=form)
+
+
+
+
