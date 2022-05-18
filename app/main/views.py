@@ -14,12 +14,12 @@ def index():
 
 
 @main.route('/assets/')
-def assets():
+def asset():
     title = 'assets'
     assets = Asset.query.filter_by().first()
-    currentAssets = Asset.query.filter_by(category_id='Current Asset')
-    financialAssets = Asset.query.filter_by(category_id='Financial Asset')
-    fixedAssets = Asset.query.filter_by(category_id='Fixed Asset')
+    currentAssets = Asset.query.filter_by(category_id='currentAssets')
+    financialAssets = Asset.query.filter_by(category_id='financialAssets')
+    fixedAssets = Asset.query.filter_by(category_id='fixedAssets')
 
     return render_template('assets.html', assets=assets, title=title, currentAssets=currentAssets, financialAssets=financialAssets, fixedAssets=fixedAssets)
 
@@ -32,11 +32,10 @@ def assets_new(user_id):
         assetname = form.assetname.data
         category_id = form.category_id.data
         worth = form.worth.data
-        # location = form.location.data
-        # user_id= current_user
+        location = form.location.data
         new_asset = Asset(user_id=user_id, assetname=assetname,
-                          description=description, category_id=category_id, worth=worth)
+                          description=description, category_id=category_id, worth=worth, location=location)
         new_asset.save_assets()
         flash('Your asset has been added successfully', 'success')
-        return redirect(url_for('main.assets'))
+        return redirect(url_for('main.asset', user_id=user_id))
     return render_template('new_asset.html', form=form)
