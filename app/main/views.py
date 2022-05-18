@@ -1,6 +1,6 @@
 from flask import render_template, redirect, url_for
 from . import main
-from ..models import,Asset
+from ..models import Asset
 from .forms import AssetForm
 from flask_login import login_required, current_user
 
@@ -32,3 +32,7 @@ def assets_new():
         new_asset.save_asset()
         return redirect(url_for('main.assets'))
     return render_template('new_asset.html',form=form)
+
+
+
+

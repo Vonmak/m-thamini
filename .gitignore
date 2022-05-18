@@ -9,7 +9,7 @@ instance/*
 .env
 start.sh
 virtual/
-
+migrations/
 
 ### Flask.Python Stack ###
 # Byte-compiled / optimized / DLL files

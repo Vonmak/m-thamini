@@ -1,5 +1,7 @@
-{% extends "base.html" %} {% block content %}
-<div class="into-message text-center my-5">
+{% extends "base.html" %}
+
+ {% block content %}
+<div class="into-message text-center my-5" id="about">
   <h2>About Our Product</h2>
   <p class="lead mx-auto fs-4 mt-3" style="max-width: 800px">
     M-Thamana is a web application that enables users to keep track of their
@@ -11,6 +13,6 @@
 <div>{% include "features.html" %}</div>
 <section class="action p-4 text-center">
   <h2 class="fs-1">Ready To Start Managing Your Assets?</h2>
-  <button class="btn btn-lg cta-btn mt-3" type="button">GET STARTED</button>
+  <a href="#register"> <button class="btn btn-lg cta-btn mt-3" type="button"><a href="{{url_for('auth.register')}}">GET STARTED</a></button></a>
 </section>
 {% endblock %}
