@@ -1,0 +1,18 @@
+{% macro displayAssets(assets)%} {%if assets%} {%for asset in assets %}
+<div class="container">
+  <table>
+    <tr>
+      <th>{{asset.title}}</th>
+    </tr>
+    <tr>
+      <td>{{asset.description}}</td>
+    </tr>
+    <tr>
+      <td>{{asset.worth}}</td>
+    </tr>
+    <tr>
+      <td>{{asset.category_id}}</td>
+    </tr>
+  </table>
+</div>
+{% endfor %} {% endif%} {% endmacro%}

@@ -1,4 +1,4 @@
-from flask import render_template, redirect, url_for,flash
+from flask import render_template, redirect, url_for, flash
 from . import main
 from ..models import Asset, User
 from .forms import AssetForm
@@ -34,7 +34,7 @@ def assets_new(user_id):
         worth = form.worth.data
         # location = form.location.data
         # user_id= current_user
-        new_asset = Asset(user_id = user_id, assetname=assetname,
+        new_asset = Asset(user_id=user_id, assetname=assetname,
                           description=description, category_id=category_id, worth=worth)
         new_asset.save_assets()
         flash('Your asset has been added successfully', 'success')
