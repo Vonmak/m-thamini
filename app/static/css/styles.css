@@ -16,8 +16,13 @@
 /* #d7d5ff, #908bd4, */
 
 body {
-      background-image: linear-gradient(to right, #d7d5ff, #b1aed7 );
+      background-image: linear-gradient(to right, #476dda, #6681cb );
       font-family: 'Poppins', sans-serif;
+}
+
+/* Side Nav */
+.sidenav {
+      background-color: #251c9e;
 }
 
 .nav-btn {
@@ -43,7 +48,7 @@ body {
 .hero-wrapper {
       background-color: var(--heroColor);
       max-height: 100%;
-      /* height: 70vh; */
+      height: 80vh;
       /* border-radius: 30px; */
       border-bottom: 8px solid var(--secondaryColor);
       display: flex;
