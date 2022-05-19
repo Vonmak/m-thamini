@@ -51,7 +51,7 @@
 
         <!-- Nav Item - Dashboard -->
         <li class="nav-item active">
-          <a class="nav-link" href="{{url_for('main.index')}}">
+          <a class="nav-link" href="{{url_for('main.user_dash')}}">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span></a
           >
@@ -171,7 +171,7 @@
 
         <!-- Nav Item - Tables -->
         <li class="nav-item">
-          <a class="nav-link" href="tables.html">
+          <a class="nav-link" href="{{url_for('main.asset')}}">
             <i class="fas fa-fw fa-table"></i>
             <span>Tables</span></a
           >
@@ -441,7 +441,7 @@
                   aria-expanded="false"
                 >
                   <span class="mr-2 d-none d-lg-inline text-gray-600 small"
-                    >Nimrod</span
+                    >{{current_user.username}}</span
                   >
                   <img
                     class="img-profile rounded-circle"
@@ -468,7 +468,7 @@
                   <div class="dropdown-divider"></div>
                   <a
                     class="dropdown-item"
-                    href="#"
+                    href="{{url_for('auth.logout')}}"
                     data-toggle="modal"
                     data-target="#logoutModal"
                   >
@@ -540,7 +540,7 @@
             >
               Cancel
             </button>
-            <a class="btn btn-primary" href="login.html">Logout</a>
+            <a class="btn btn-primary" href="{{url_for('auth.logout')}}">Logout</a>
           </div>
         </div>
       </div>

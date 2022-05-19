@@ -1,25 +1,15 @@
 {% macro displayAssets(assets)%} {%if assets%} {%for asset in assets %}
-<div class="container">
-  <table>
-    <tr>
-      <td>{{asset.assetname}}</td>
-    </tr>
-    <tr>
-      <td>{{asset.description}}</td>
-    </tr>
-    <tr>
-      <td>{{asset.location}}</td>
-    </tr>
 
-    <tr>
-      <td>{{asset.category_id}}</td>
-    </tr>
-    <tr>
-      <td>{{asset.date_posted}}</td>
-    </tr>
-    <tr>
-      <td>KES.{{asset.worth}}</td>
-    </tr>
-  </table>
-</div>
+<td>{{asset.assetname}}</td>
+<td>{{asset.description}}</td>
+<td>{{asset.location}}</td>
+<td>{{asset.category_id}}</td>
+<td>{{asset.date_posted}}</td>
+<td>KES.{{asset.worth}}</td>
+
+{% endfor %} {% endif%} {% endmacro%} {% macro display(assets)%} {%if assets%}
+{%for asset in assets %}
+
+<td>KES.{{asset.worth}}</td>
+
 {% endfor %} {% endif%} {% endmacro%}

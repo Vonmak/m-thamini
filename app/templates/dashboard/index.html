@@ -8,7 +8,7 @@
     class="d-sm-flex align-items-center justify-content-between mb-4"
   >
     <h1 class="h3 mb-0 text-gray-800">
-      Welcome Nimrod To Your Dashboard
+      Welcome {{current_user.username}} To Your Dashboard
     </h1>
     <a
       href="#"
@@ -56,7 +56,7 @@
                 Total Current Assets
               </div>
               <div class="h5 mb-0 font-weight-bold text-gray-800">
-                KES215,000
+                {{macro.displayAssets(currentAssets)}}
               </div>
             </div>
             {% endfor %}
