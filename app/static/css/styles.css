@@ -20,6 +20,20 @@ body {
       font-family: 'Poppins', sans-serif;
 }
 
+.add {
+      display: none;
+}
+
+.new {
+      display: none;
+}
+
+.map {
+      display: none;
+}
+
+
+
 /* Side Nav */
 .sidenav {
       background-color: #251c9e;
@@ -41,6 +55,11 @@ body {
 .nav-item a{
       color: var(--heroColor);
       font-size: 20px;
+}
+
+/* CHARTS */
+#charts {
+      display: none;
 }
 
 

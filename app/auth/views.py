@@ -25,7 +25,7 @@ def register():
     
 @auth.route('/login',methods=['GET','POST'])
 def login():
-      login_form = LoginForm()
+    login_form = LoginForm()
       if login_form.validate_on_submit():
             user = User.query.filter_by(email = login_form.email.data).first()
             if user is not None and user.verify_password(login_form.password.data):
@@ -35,4 +35,17 @@ def login():
 
       title = "login"
       return render_template('login.html',title=title,login_form = login_form)
+
+
+@auth.route('dashboard/tables')
+def tables():
+      
+      return render_template('dashboard/tables.html')
+
+
+@auth.route('dashboard/add_assets')
+def add_assets():
+      
+      return render_template('dashboard/add_assets.html')
+
 
