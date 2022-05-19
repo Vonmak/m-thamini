@@ -9,8 +9,9 @@
     />
     <meta name="description" content="" />
     <meta name="author" content="" />
+    <link rel="shortcut icon" href="{{url_for('static', filename='images/logo/favicon.png')}}" type="image/x-icon">
 
-    <title>SB Admin 2 - Login</title>
+    <title>M-Thamini - Login</title>
 
     <!-- Custom fonts for this template-->
     <link
@@ -28,6 +29,10 @@
       href="{{url_for('static', filename='css/sb-admin-2.min.css')}}"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename='css/styles.css')}}"
+    />
   </head>
 
   <body class="bg-gradient-primary">
@@ -38,7 +43,7 @@
           <div class="card o-hidden border-0 shadow-lg my-5">
             <div class="card-body p-0">
               <!-- Nested Row within Card Body -->
-              <div class="row">
+              <div class="row login-card">
                 <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
                 <div class="col-lg-6">
                   <div class="p-5">
