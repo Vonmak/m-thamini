@@ -19,6 +19,12 @@ def user_dash():
     return render_template('dashboard/index.html')
 
 
+@main.route('/dashboard/main')
+def dash():
+
+    return render_template('dashboard.html')
+
+
 @main.route('/assets/')
 def asset():
     title = 'assets'
