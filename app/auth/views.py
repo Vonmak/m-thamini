@@ -40,3 +40,14 @@ def login():
 def logout():
     logout_user()
     return redirect(url_for("main.index"))
+
+@auth.route('dashboard/tables')
+def tables():
+      
+      return render_template('dashboard/tables.html')
+
+
+@auth.route('dashboard/add_assets')
+def add_assets():
+      
+      return render_template('dashboard/add_assets.html')
