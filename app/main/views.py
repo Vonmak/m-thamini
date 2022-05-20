@@ -1,9 +1,24 @@
-from flask import render_template, redirect, url_for, flash
+from flask import render_template, redirect, url_for, flash, Flask, make_response
 from . import main
 from ..models import Asset, User
 from .forms import AssetForm
 from flask_login import login_required, current_user
-from app import db
+from app import db, create_app
+import pdfkit 
+
+create_app = Flask(__name__)
+
+
+@main.route('/report_<name>.pdf')
+def report_pdf():
+    # Make a PDF straight from HTML in a string.
+    html = render_template('comments.html', name=name)
+    pdf = pdfkit.from_string(html, False)
+    response = make_response(pdf) 
+    response.headers['Content-Type'] = 'application/pdf'
+    response.headers['Content-Disposition']='inline; filename=output.pdf'  
+    return  response
+
 
 
 @main.route('/')
@@ -14,18 +29,13 @@ def index():
 
 
 @main.route('/dashboard/index')
+@login_required
 def user_dash():
 
-    return render_template('dashboard/index.html')
-
-
-@main.route('/dashboard/main')
-def dash():
-
-    return render_template('dashboard.html')
-
+    return render_template('dash2.html')
 
 @main.route('/assets/')
+@login_required
 def asset():
     title = 'assets'
     assets = Asset.query.filter_by().first()
@@ -37,6 +47,7 @@ def asset():
 
 
 @main.route('/assets/<int:user_id>/new', methods=['GET', 'POST'])
+@login_required
 def assets_new(user_id):
     form = AssetForm()
     if form.validate_on_submit():
@@ -49,5 +60,19 @@ def assets_new(user_id):
                           description=description, category_id=category_id, worth=worth, location=location)
         new_asset.save_assets()
         flash('Your asset has been added successfully', 'success')
-        return redirect(url_for('main.asset', user_id=user_id))
+        return redirect(url_for('main.view', user_id=user_id))
     return render_template('new_asset.html', form=form)
+
+
+@main.route('/tables')
+@login_required
+def view():
+    posts = Asset.query.all()
+    
+    return render_template('tables.html', posts=posts)
+
+@main.route("/location")
+@login_required
+def location():
+
+    return render_template("locations.html")
