@@ -33,14 +33,23 @@
           <a class="nav-link" href="#about">About</a>
         </li>
       </ul>
+      {% if current_user.is_authenticated %}
+
+      <a href="{{url_for('main.user_dash')}}">
+        <button class="btn nav-btn mx-3">View Dashboard</button>
+      </a>
+
+      <a href="{{url_for('auth.logout')}}">
+        <button class="btn nav-btn mx-3">Log out</button>
+      </a>
+      {% else %}
       <a href="{{url_for('auth.login')}}">
         <button class="btn nav-btn mx-3">Login</button>
       </a>
       <a href="{{url_for('auth.register')}}">
-
         <button class="btn nav-btn">Sign Up</button>
-
       </a>
+      {%endif%}
     </div>
   </div>
 </nav>

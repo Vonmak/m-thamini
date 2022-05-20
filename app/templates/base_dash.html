@@ -68,7 +68,7 @@
         <li class="nav-item">
           <a
             class="nav-link collapsed"
-            href="{{url_for('auth.add_assets')}}"
+            href="{{url_for('main.assets_new',user_id=current_user.id)}}"
             data-toggle="collapse"
             data-target="#collapseTwo"
             aria-expanded="true"
@@ -98,11 +98,7 @@
         <li class="nav-item">
           <a
             class="nav-link collapsed"
-            href="#"
-            data-toggle="collapse"
-            data-target="#collapsePages"
-            aria-expanded="true"
-            aria-controls="collapsePages"
+            href="{{url_for('main.location')}}"
           >
             <i class="fas fa-location-arrow"></i>
             <span class="loc-maps">Assets Locations</span>
@@ -120,10 +116,11 @@
 
         <!-- Nav Item - Tables -->
         <li class="nav-item">
-          <a class="nav-link" href="{{url_for('main.asset')}}">
+          <a class="nav-link" href="{{url_for('main.view',username = current_user.username)}}">
             <i class="fas fa-fw fa-table"></i>
             <span>Tables</span></a
           >
+          
         </li>
 
         <!-- Divider -->
@@ -225,7 +222,7 @@
                   aria-expanded="false"
                 >
                   <span class="mr-2 d-none d-lg-inline text-gray-600 small"
-                    >{{current_user.username}}</span
+                    >{{current_user.username | title}}</span
                   >
                   <img
                     class="img-profile rounded-circle"
