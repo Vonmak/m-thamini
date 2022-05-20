@@ -1,9 +1,10 @@
-from flask import render_template, redirect, url_for, flash, Flask, make_response
+from flask import render_template, redirect, url_for, flash, Flask, make_response, request
 from . import main
-from ..models import Asset, User
+from ..models import Asset, User, Subscriber
 from .forms import AssetForm
 from flask_login import login_required, current_user
 from app import db, create_app
+from ..email import mail_message
 import pdfkit 
 
 create_app = Flask(__name__)
@@ -76,3 +77,12 @@ def view():
 def location():
 
     return render_template("locations.html")
+
+@main.route('/subscribe',methods = ['POST','GET'])
+def subscribe():
+    email = request.form.get('subscriber')
+    new_subscriber = Subscriber(email = email)
+    new_subscriber.save_subscriber()
+    mail_message("Subscribed to M-thamini","email/welcome_user",new_subscriber.email,new_subscriber=new_subscriber)
+    flash('Successfully subscribed')
+    return redirect(url_for('main.index'))
