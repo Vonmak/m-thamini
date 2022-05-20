@@ -9,8 +9,6 @@ instance/*
 .env
 virtual/
 
-migrations/
-
 start.sh
 
 
