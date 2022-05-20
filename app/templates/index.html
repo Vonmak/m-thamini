@@ -1,7 +1,5 @@
-
 {% extends "base.html" %} {% block content %}
 <div class="intro-message text-center text-white my-5">
-
   <h2>About Our Product</h2>
   <p class="lead mx-auto fs-4 mt-3" style="max-width: 800px">
     M-Thamana is a web application that enables users to keep track of their
@@ -12,11 +10,32 @@
 </div>
 <div>{% include "features.html" %}</div>
 <section class="action p-4 text-center">
-  <h2 class="fs-1">Ready To Start Managing Your Assets?</h2>
-
-  <a href="{{url_for('auth.register')}}">
-    <button class="btn btn-lg cta-btn mt-3">Get Started</button>
-  </a>
-
+  <div class="container mx-auto subscribe">
+    <div>
+      <h2 class="fs-1">Ready To Start Managing Your Assets?</h2>
+      <a href="{{url_for('auth.register')}}">
+        <button class="btn btn-lg cta-btn mt-3">Get Started</button>
+      </a>
+    </div>
+    <form
+      class="form-inline ml-2"
+      action="{{url_for('main.subscribe')}}"
+      method="POST"
+    >
+      <h4>Subscribe To News Letter!</h4>
+      <div class="md-form form-group">
+        <label class="white-color">Enter your Email Address...</label>
+        <input
+          type="email"
+          class="form-control mt-2"
+          name="subscriber"
+          required
+        />
+      </div>
+      <div class="md-form mt-2 form-group">
+        <button class="btn btn-sm cta-btn mx-auto" id="subs">Subscribe</button>
+      </div>
+    </form>
+  </div>
 </section>
 {% endblock %}

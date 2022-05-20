@@ -165,3 +165,8 @@ body {
     margin-top: 10%;
     max-width: 500px;
 }
+
+.subscribe {
+    display: flex;
+    justify-content: space-around;
+}
